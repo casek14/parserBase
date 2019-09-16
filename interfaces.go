@@ -2,13 +2,12 @@ package parsebase
 
 // Interface ensure to get short news
 type ShortNewsInterface interface {
-	GetShortNews() []*ShortNews
+	GetShortNews() ([]*ShortNews, error)
 }
 
 type ArticlesInterface interface {
-	getArticles() []*Article
+	GetArticles() ([]*Article, error)
 }
-
 
 // Base type of the short news
 type ShortNews struct {
@@ -19,8 +18,8 @@ type ShortNews struct {
 }
 
 type Article struct {
-	Title string
+	Title       string
 	Description string
-	Url string
-	Content []string
+	Url         string
+	Content     []string
 }
